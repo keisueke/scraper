@@ -94,7 +94,7 @@ def main() -> None:
     """
     JSON → HTML 変換を実行してファイルを出力する。
     """
-    out_html = BASE / "data" / "dashboard.html"
+    out_html = BASE / "docs" / "dashboard.html"
     out_html.parent.mkdir(exist_ok=True)
 
     out_html.write_text(

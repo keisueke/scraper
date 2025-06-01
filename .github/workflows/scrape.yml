@@ -15,6 +15,6 @@ jobs:
       - run: |
           git config --global user.name  "github-actions"
           git config --global user.email "actions@users.noreply.github.com"
-          git add data/dashboard.html
+          git add docs/dashboard.html
           git commit -m "update dashboard $(date -u '+%F %T')" || echo "no change"
           git push
