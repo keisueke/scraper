@@ -1,5 +1,3 @@
-
-
 #!/usr/bin/env python3
 """
 build_dashboard.py
@@ -81,7 +79,15 @@ kwBtns.forEach(btn=>{
     kwBtns.forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
     const kw = btn.dataset.kw;
-    table.search(kw === 'ALL' ? '' : kw);
+    const rows = document.querySelectorAll('#tbl tbody tr');
+    rows.forEach(row => {
+      if (kw === 'ALL') {
+        row.style.display = '';
+      } else {
+        const tags = row.getAttribute('data-tags') || '';
+        row.style.display = tags.split(' ').includes(kw) ? '' : 'none';
+      }
+    });
   });
 });
 </script>
