@@ -1,7 +1,7 @@
 # Sukebei スクレイパー & クリック式ダッシュボード
 
 ## 概要
-- **`scrape.py`** が Sukebei RSS を取得し、`data/latest.json` に保存  
+- **`scrape.py`** が Sukebei RSS を取得し、`data/latest.json` に保存する
 - **`build_dashboard.py`** が JSON から **静的 HTML** (`data/dashboard.html`) を生成  
 - ブラウザで `dashboard.html` を開き、上部ボタンをクリックすると  
   登録キーワードごとにライブフィルタリングできる
