@@ -1,0 +1,8 @@
+# Python
+__pycache__/
+*.py[cod]
+env/
+# Logs
+*.log
+# Generated
+data/latest.json

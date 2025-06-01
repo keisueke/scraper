@@ -1,0 +1,19 @@
+name: scrape-daily
+on:
+  schedule:
+    - cron:  '5 20 * * *'    # JST 05:05 = UTC 20:05
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install -r requirements.txt
+      - run: python scrape.py && python build_dashboard.py
+      - run: |
+          git config --global user.name  "github-actions"
+          git config --global user.email "actions@users.noreply.github.com"
+          git add data/dashboard.html
+          git commit -m "update dashboard $(date -u '+%F %T')" || echo "no change"
+          git push
