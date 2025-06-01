@@ -2,6 +2,7 @@ name: scrape-daily
 on:
   schedule:
     - cron:  '5 20 * * *'    # JST 05:05 = UTC 20:05
+  workflow_dispatch:          # ← 手動実行用トリガーを追加
 jobs:
   run:
     runs-on: ubuntu-latest
